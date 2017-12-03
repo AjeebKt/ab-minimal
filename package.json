@@ -1,14 +1,11 @@
 {
   "name": "ab-minimal",
   "version": "0.0.1",
-  "description": "Gentelella Admin is a free to use Bootstrap admin template",
+  "description": "personal ab",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/puikinsh/gentelella.git"
-  },
+  "repository": "git@github.com:AjeebKt/ab-minimal.git",
   "keywords": [
     "css",
     "js",
@@ -20,16 +17,13 @@
     "backend",
     "responsive"
   ],
-  "author": "Aigars Silkalns",
-  "contributors": [
-    "Christian Esperar"
-  ],
+  "author": "Ajeeb Kalathingalthodi",
   "license": "MIT",
-  "main": "build/js/custom.min.js",
+  "main": "build/index.html",
   "bugs": {
-    "url": "https://github.com/puikinsh/gentelella/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/puikinsh/gentelella#readme",
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.12.10",
     "gulp": "^3.9.1",

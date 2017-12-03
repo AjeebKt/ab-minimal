@@ -1,3 +1,6 @@
+@import "bootstrap/variables";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
 body {
   background: #ffffff;
   font-family: 'Work Sans', sans-serif;
@@ -22,12 +25,12 @@ h1 {
   margin-bottom: 0px;
 }
 
-h2 {
+h2, .h2-style {
   font-size: 32px;
   line-height: 46px;
 }
 
-h3 {
+h3, .h3-style {
   font-size: 26px;
 }
 
@@ -40,10 +43,10 @@ h4 {
 
 p {
   color: #777;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 26px;
-  letter-spacing: 0.2px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
 }
 
 strong {
@@ -54,7 +57,15 @@ strong {
   background-color: #000;
   border-color: transparent;
 }
-
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
 /*---------------------------------------
     General               
 -----------------------------------------*/
@@ -86,7 +97,8 @@ a {
   }
 }
 
-#portfolio, #about, #blog, #contact, #single-project, #blog-single-post {
+// #portfolio, #about, #blog, #contact, #single-project, #blog-single-post {
+section {
   padding-top: 80px;
   padding-bottom: 120px;
 }
@@ -310,7 +322,7 @@ a {
     margin-top: 32px;
     .portfolio-overlay {
       position: absolute;
-      background: #222;
+      background: $gray-dark;
       color: #ffffff;
       top: 0;
       left: 0;

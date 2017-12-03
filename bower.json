@@ -1,0 +1,30 @@
+{
+  "name": "ab-minimal",
+  "description": "minimal website",
+  "main": "build/js/custom.min.js",
+  "authors": [
+    "Ajeeb Kalathingalthodi"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "js",
+    "html",
+    "bootstrap",
+    "responsive",
+    "minimal"
+  ],
+  "homepage": "https://github.com/AjeebKt/ab-minimal",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2"
+  }
+}

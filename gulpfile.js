@@ -23,7 +23,7 @@ gulp.task('scripts', function() {
 
 // TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
-  return sass('src/scss/*.scss', options)
+  return sass('src/sass/*.scss', options)
         .pipe(autoprefixer('last 8 versions', '> 5%'))
         .pipe(concat(filename))
         .pipe(gulp.dest(DEST+'/css'))
@@ -31,7 +31,7 @@ var compileSASS = function (filename, options) {
 };
 
 gulp.task('sass', function() {
-    return compileSASS('custom.css', {});
+    return compileSASS('style.css', {});
 });
 
 gulp.task('sass-minify', function() {
@@ -43,17 +43,17 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: './'
         },
-        startPath: './production/index.html'
+        startPath: './build/index.html'
     });
 });
 
 gulp.task('watch', function() {
   // Watch .html files
-  gulp.watch('production/*.html', browserSync.reload);
+  gulp.watch('build/*.html', browserSync.reload);
   // Watch .js files
-  gulp.watch('src/js/*.js', ['scripts']);
+  // gulp.watch('src/js/*.js', ['scripts']);
   // Watch .scss files
-  gulp.watch('src/scss/*.scss', ['sass', 'sass-minify']);
+  gulp.watch('src/sass/*.scss', ['sass', 'sass-minify']);
 });
 
 // Default Task
