@@ -31,7 +31,10 @@ var compileSASS = function (filename, options) {
 };
 
 gulp.task('sass', function() {
-    return compileSASS('style.css', {});
+    return compileSASS('style.css', {
+      style: 'nested',
+      lineNumbers: true
+    });
 });
 
 gulp.task('sass-minify', function() {

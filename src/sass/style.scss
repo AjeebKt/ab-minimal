@@ -2,8 +2,8 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 body {
-  background: #ffffff;
-  font-family: 'Work Sans', sans-serif;
+  background: $body-bg;
+  font-family: $font-family-sans-serif;
   font-style: normal;
   font-weight: 300;
   overflow-x: hidden;
@@ -35,14 +35,14 @@ h3, .h3-style {
 }
 
 h4 {
-  color: #666;
+  color: $gray;
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 2px;
 }
 
 p {
-  color: #777;
+  color: lighten($gray-base, 27.06);
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
@@ -53,8 +53,12 @@ strong {
   font-weight: 400;
 }
 
+ul, li {
+  list-style: none;
+}
+
 .btn-success:focus {
-  background-color: #000;
+  background-color: $gray-base;
   border-color: transparent;
 }
 .text-left {
@@ -75,13 +79,13 @@ html {
 }
 
 a {
-  color: #4d638c;
+  color: $gray-dark;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none !important;
   &:hover, &:active, &:focus {
-    color: #4d638c;
+    color: lighten($gray-base, 6%);
     outline: none;
   }
 }
@@ -108,7 +112,7 @@ section {
   padding-bottom: 62px;
   text-align: center;
   h3 {
-    color: #555;
+    color: $gray;
     font-weight: 400;
     letter-spacing: 4px;
   }
@@ -129,12 +133,12 @@ section {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: none repeat scroll 0 0 #ffffff;
+  background: none repeat scroll 0 0 $light;
 }
 
 .sk-spinner-wordpress {
   &.sk-spinner {
-    background-color: #bdc3c7;
+    background-color: lighten(saturate(adjust-hue($gray-base, 204), 8.20), 76.08);
     width: 40px;
     height: 40px;
     border-radius: 40px;
@@ -144,7 +148,7 @@ section {
   }
   .sk-inner-circle {
     display: block;
-    background-color: #ffffff;
+    background-color: $light;
     width: 16px;
     height: 16px;
     position: absolute;
@@ -185,7 +189,7 @@ section {
 -----------------------------------------*/
 
 .navbar-default {
-  background: #ffffff;
+  background: $light;
   padding: 18px 0;
   border: none;
   margin-top: 62px;
@@ -194,14 +198,14 @@ section {
   }
   .navbar-brand {
     padding-top: 6px;
-    .fa {
-      color: #000;
+    .icon-ab {
+      color: $gray-dark;
       font-size: 42px;
     }
   }
   .navbar-nav {
     li a {
-      color: #777;
+      color: $gray-light;
       font-size: 16px;
       letter-spacing: 1px;
       -webkit-transition: all 0.4s ease-in-out;
@@ -209,28 +213,28 @@ section {
       padding-right: 22px;
       padding-left: 22px;
       &:hover {
-        color: #333;
+        color: $gray-dark;
       }
     }
     > li {
       a:hover {
-        color: #333 !important;
+        color: $gray-dark !important;
       }
       > a {
         &:hover, &:focus {
-          color: #777;
+          color: $gray-light;
           background-color: transparent;
         }
       }
     }
     .active > a {
-      color: #333;
+      color: $gray-dark;
     }
     > .active > a {
-      color: #333;
+      color: $gray-dark;
       background-color: transparent;
       &:hover, &:focus {
-        color: #333;
+        color: $gray-dark;
         background-color: transparent;
       }
     }
@@ -239,7 +243,7 @@ section {
     border: none;
     padding-top: 10px;
     .icon-bar {
-      background: #bdc3c7;
+      background: lighten(saturate(adjust-hue($gray-base, 204), 8.20), 76.08);
       border-color: transparent;
     }
     &:hover, &:focus {
@@ -273,6 +277,23 @@ section {
   }
 }
 
+.skill {
+  position: relative;
+  li {
+    &:before {
+      position: absolute;
+      left: 0;
+      content: "•";
+      font-size: 25px;
+      color: lighten($gray-base, 84.71);
+    }
+    p {
+      margin: 0 5px;
+      font-size: 20px;
+    }
+  }
+}
+
 /*---------------------------------------
    About section              
 -----------------------------------------*/
@@ -296,7 +317,7 @@ section {
   ul {
     padding-left: 22px;
     li {
-      color: #777;
+      color: $gray-light;
       font-size: 16px;
       font-weight: 400;
       padding-top: 2px;
@@ -311,7 +332,7 @@ section {
 
 #portfolio {
   small {
-    color: #f0f0f0;
+    color: lighten($gray-base, 94.12);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -323,7 +344,7 @@ section {
     .portfolio-overlay {
       position: absolute;
       background: $gray-dark;
-      color: #ffffff;
+      color: $light;
       top: 0;
       left: 0;
       right: 0;
@@ -370,7 +391,7 @@ section {
     padding-top: 12px;
   }
   a {
-    color: #555;
+    color: $gray;
     font-weight: bold;
     letter-spacing: 1px;
     padding-left: 14px;
@@ -386,27 +407,27 @@ section {
     padding-left: 0px;
   }
   .form-control {
-    border: 1px solid #f0f0f0;
+    border: 1px solid lighten($gray-base, 94.12);
     box-shadow: none;
     margin-top: 10px;
     margin-bottom: 10px;
     transition: all 0.4s ease-in-out;
     &:hover {
-      border-color: #777;
+      border-color: $gray-light;
     }
   }
   input, select {
     height: 50px;
   }
   input[type="submit"] {
-    background: #222;
+    background: lighten($gray-base, 13.33);
     border-radius: 100px;
     border: none;
-    color: #ffffff;
+    color: $light;
     font-weight: 400;
     transition: all 0.4s ease-in-out;
     &:hover {
-      background: #000;
+      background: $gray-base;
     }
   }
 }
@@ -416,7 +437,7 @@ section {
 -----------------------------------------*/
 
 .blog-post-thumb {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid lighten($gray-base, 94.12);
   padding-top: 32px;
   padding-bottom: 62px;
   margin-bottom: 32px;
@@ -433,9 +454,9 @@ section {
 }
 
 .blog-post-title a {
-  color: #555;
+  color: $gray;
   &:hover {
-    color: #000;
+    color: $gray-base;
   }
 }
 
@@ -445,7 +466,7 @@ section {
     letter-spacing: 0.5px;
     padding-right: 12px;
     a {
-      color: #333;
+      color: $gray-dark;
     }
     img {
       display: inline-block;
@@ -461,23 +482,23 @@ section {
   }
   .btn {
     border-radius: 100px;
-    color: #777;
+    color: $gray-light;
     font-weight: 400;
     letter-spacing: 1px;
     padding: 14px 28px;
     margin-top: 26px;
     transition: all 0.4s ease-in-out;
     &:hover {
-      background: #000;
+      background: $gray-base;
       border-color: transparent;
-      color: #ffffff;
+      color: $light;
     }
   }
 }
 
 .blog-author {
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid lighten($gray-base, 94.12);
+  border-bottom: 1px solid lighten($gray-base, 94.12);
   padding-top: 32px;
   padding-bottom: 32px;
   margin-top: 42px;
@@ -515,7 +536,7 @@ section {
       padding-right: 14px;
     }
   }
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid lighten($gray-base, 94.12);
   padding-bottom: 32px;
   margin-bottom: 42px;
   h3 {
@@ -532,25 +553,25 @@ section {
   }
   .form-control {
     box-shadow: none;
-    border: 1px solid #f0f0f0;
+    border: 1px solid lighten($gray-base, 94.12);
     margin-top: 10px;
     margin-bottom: 10px;
     transition: all 0.4s ease-in-out;
     &:hover {
-      border-color: #777;
+      border-color: $gray-light;
     }
   }
   input {
     height: 45px;
     &[type="submit"] {
-      background: #222;
+      background: lighten($gray-base, 13.33);
       border-radius: 100px;
       border: none;
-      color: #ffffff;
+      color: $light;
       font-weight: 400;
       transition: all 0.4s ease-in-out;
       &:hover {
-        background: #000;
+        background: $gray-base;
         border-color: transparent;
       }
     }
@@ -570,17 +591,17 @@ section {
 -----------------------------------------*/
 
 footer {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid lighten($gray-base, 94.12);
   padding: 100px 0px;
   position: relative;
   .col-md-3 .fa {
     font-size: 42px;
   }
   a {
-    color: #555;
+    color: $gray;
   }
   hr {
-    border-color: #ffffff;
+    border-color: $light;
     margin-top: 42px;
     margin-bottom: 22px;
   }
@@ -602,7 +623,7 @@ footer {
     display: inline-block;
     list-style: none;
     a {
-      color: #777;
+      color: $gray-light;
       cursor: pointer;
       font-size: 16px;
       text-decoration: none;
@@ -612,7 +633,7 @@ footer {
       position: relative;
       margin: 22px 12px 10px 12px;
       &:hover {
-        color: #000;
+        color: $gray-base;
         transform: scale(1.1);
       }
     }
