@@ -1,5 +1,7 @@
-@import "bootstrap/variables";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "bootstrap";
+@import "plugins/icomoon";
+@import "common";
+
 
 body {
   background: $body-bg;
@@ -377,9 +379,9 @@ section {
 .project-list {
   .portfolio-thumb {
     @include transition(all 0.4s ease-in-out);
-    @include box-shadow(0 2px 10px -4px rgba(22, 22, 22, 0.2));
+    @include box-shadow(0 2px 6px -3px rgba(22, 22, 22, 0.2));
     &:hover {
-      @include box-shadow(0 2px 16px -6px rgba(22, 22, 22, 0.26));
+      @include box-shadow(0 4px 16px -8px rgba(33, 33, 33, 0.4));
     }
     img {
       border-radius: 3px;
@@ -607,8 +609,9 @@ section {
 -----------------------------------------*/
 
 footer {
+  text-align: center;
   border-top: 1px solid lighten($gray-base, 94.12);
-  padding: 100px 0px;
+  padding: 30px 0px 0;
   position: relative;
   .col-md-3 .fa {
     font-size: 42px;
@@ -622,11 +625,23 @@ footer {
     margin-bottom: 22px;
   }
   .footer-copyright {
-    padding-top: 16px;
+    padding-top: 15px;
+    p {
+      font-size: 12px;
+      color: #bbb; 
+      font-weight: 500;
+    }
   }
 }
 .Onfooter {
   font-size: 42px;
+  color: #aaa;
+}
+.footerContact {
+  p {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
 
 /*---------------------------------------
